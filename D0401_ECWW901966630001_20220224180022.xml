@@ -1,0 +1,40 @@
+<Allowance xmlns="urn:GEINV:eInvoiceMessage:D0401:3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:GEINV:eInvoiceMessage:D0401:3.2 D0401.xsd">
+  <Main>
+    <AllowanceNumber>ECRY89485400000</AllowanceNumber>
+    <AllowanceDate>20220224</AllowanceDate>
+    <Seller>
+      <Identifier>2755555</Identifier>
+      <Name>股份有限公司</Name>
+      <Address></Address>
+      <PersonInCharge></PersonInCharge>
+      <TelephoneNumber></TelephoneNumber>
+      <EmailAddress></EmailAddress>
+    </Seller>
+    <Buyer>
+      <Identifier>0000000000</Identifier>
+      <Name>4912</Name>
+      <Address></Address>
+      <PersonInCharge></PersonInCharge>
+      <TelephoneNumber></TelephoneNumber>
+      <EmailAddress></EmailAddress>
+    </Buyer>
+    <AllowanceType>2</AllowanceType>
+  </Main>
+  <Details>
+    <ProductItem>
+      <OriginalInvoiceDate>20220224</OriginalInvoiceDate>
+      <OriginalInvoiceNumber>RY89485451</OriginalInvoiceNumber>
+      <OriginalDescription>NHK小學生自主學習科學方法 1-3 (3冊合售)</OriginalDescription>
+      <Quantity>1.0</Quantity>
+      <UnitPrice>83.00</UnitPrice>
+      <Amount>83</Amount>
+      <Tax>5</Tax>
+      <AllowanceSequenceNumber>001</AllowanceSequenceNumber>
+      <TaxType>1</TaxType>
+    </ProductItem>
+  </Details>
+  <Amount>
+    <TaxAmount>4</TaxAmount>
+    <TotalAmount>83</TotalAmount>
+  </Amount>
+</Allowance>

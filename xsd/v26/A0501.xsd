@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="DescriptionType.xsd"/>
+	<xsd:element name="CancelInvoice">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CancelInvoiceNumber" type="InvoiceNumberType"/>
+				<xsd:element name="InvoiceDate" type="DateType"/>
+				<xsd:element name="BuyerId" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="10"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="SellerId" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="10"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="CancelDate" type="DateType"/>
+				<xsd:element name="CancelTime" type="TimeType"/>
+				<xsd:element name="ReturnTaxDocumentNumber" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="60"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="Remark" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="200"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<!--作廢發票號碼-->
+				<!--發票日期-->
+				<!--買方識別碼-->
+				<!--賣方識別碼-->
+				<!--作廢日期-->
+				<!--作廢時間-->
+				<!--專案退稅核准文號-->
+				<!--備註-->
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,100 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:group name="RoleDescriptionType">
+  <xsd:sequence>
+    <xsd:element name="Identifier">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+          <xsd:minLength value="1"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="Name">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1"/>
+          <xsd:maxLength value="60"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="Address" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="100"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="PersonInCharge" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="TelephoneNumber" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="FacsimileNumber" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="15"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="EmailAddress" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="CustomerNumber" minOccurs="0">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+  </xsd:sequence>
+</xsd:group>
+<xsd:complexType name="DateType">
+  <xsd:sequence>
+    <xsd:element name="Year" type="xsd:positiveInteger"/>
+    <xsd:element name="Month">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:positiveInteger">
+          <xsd:minInclusive value="1"/>
+          <xsd:maxInclusive value="12"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+    <xsd:element name="Day">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:positiveInteger">
+          <xsd:minInclusive value="1"/>
+          <xsd:maxInclusive value="31"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:element>
+  </xsd:sequence>
+</xsd:complexType>
+<xsd:simpleType name="TimeType">
+  <xsd:restriction base="xsd:time"/>
+</xsd:simpleType>
+<xsd:simpleType name="InvoiceNumberType">
+  <xsd:restriction base="xsd:string">
+    <xsd:minLength value="1"/>
+    <xsd:maxLength value="10"/>
+  </xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AllowanceNumberType">
+  <xsd:restriction base="xsd:string">
+    <xsd:minLength value="1"/>
+    <xsd:maxLength value="16"/>
+  </xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>

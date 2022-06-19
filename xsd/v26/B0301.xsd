@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="DescriptionType.xsd"/>
+	<xsd:element name="Allowance">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Main" type="MainType"/>
+				<xsd:element name="Details" type="DetailsType"/>
+				<xsd:element name="Amount" type="AmountType"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--MainType-->
+	<xsd:complexType name="MainType">
+		<xsd:sequence>
+			<xsd:element name="AllowanceNumber" type="AllowanceNumberType"/>
+			<xsd:element name="AllowanceDate" type="DateType"/>
+			<xsd:element name="Seller">
+				<xsd:complexType mixed="false">
+					<xsd:group ref="RoleDescriptionType"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Buyer">
+				<xsd:complexType mixed="false">
+					<xsd:group ref="RoleDescriptionType"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AllowanceType">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:length value="1"/>
+						<xsd:pattern value="[12]"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--DetailsType-->
+	<xsd:complexType name="DetailsType">
+		<xsd:sequence>
+			<xsd:element name="ProductItem" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="InvoiceDate" type="DateType"/>
+						<xsd:element name="InvoiceNumber" type="InvoiceNumberType"/>
+						<xsd:element name="OriginalSequenceNumber" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="2"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Item" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="6"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="OriginalDescription">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="256"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Quantity" type="xsd:decimal"/>
+						<xsd:element name="Unit" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="6"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="UnitPrice" type="xsd:decimal"/>
+						<xsd:element name="Amount" type="xsd:decimal"/>
+						<xsd:element name="AllowanceSequenceNumber">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="2"/>
+									<xsd:minLength value="1"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="TaxType">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="1"/>
+									<xsd:pattern value="[1-3]"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!--AmountType-->
+	<xsd:complexType name="AmountType">
+		<xsd:sequence>
+			<xsd:element name="TaxAmount" type="xsd:decimal"/>
+			<xsd:element name="TotalAmount" type="xsd:decimal"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

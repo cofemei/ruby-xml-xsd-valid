@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="DescriptionType.xsd"/>
+	<!--發票接收確認：A0102-->
+	<xsd:element name="InvoiceConfirm">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--發票號碼-->
+				<xsd:element name="InvoiceNumber" type="InvoiceNumberType"/>
+				<!--發票日期-->
+				<xsd:element name="InvoiceDate" type="DateType"/>
+				<!--買方識別碼碼-->
+				<xsd:element name="BuyerId" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="10"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<!--賣方識別碼碼-->
+				<xsd:element name="SellerId" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="10"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<!--接收日期-->
+				<xsd:element name="ReceiveDate" type="DateType"/>
+				<!--接收時間-->
+				<xsd:element name="ReceiveTime" type="TimeType"/>
+				<!--買受人註記欄-->
+				<xsd:element name="BuyerRemark" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:length value="1"/>
+							<xsd:pattern value="[1-4]"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<!--備註-->
+				<xsd:element name="Remark" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:maxLength value="200"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+			<!--版本屬性-->
+			<xsd:attribute ref="XSDVersion"/>
+			
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
